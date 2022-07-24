@@ -1,7 +1,8 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
 const UserModel = require("../models/User");
+require('dotenv').config();
 
-const sequelize = new Sequelize("db", "username", "password", {
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
   host: "localhost",
   dialect: "postgres", //'mysql' | 'mariadb' | 'postgres' | 'mssql' */
 });

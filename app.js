@@ -1,20 +1,13 @@
 const express = require("express");
 const sequelize = require("./src/db/sequelize").sequelize;
-const { User } = require("./src/db/sequelize");
+const user_router = require("./src/routes/user");
 
 const app = express();
 const port = 3000;
 
-app.get("/", async (req, res) => {
-  try {
-    const users = await User.findAll();
-    res.send(users);
-  } catch (err) {
-    res.send(err);
-  }
-});
+app.use("/users", user_router);
 
-const authToDB = async () => {
+(async () => {
   try {
     await sequelize.authenticate();
     app.listen(port, () => {
@@ -23,6 +16,4 @@ const authToDB = async () => {
   } catch (error) {
     console.error("Unable to connect to the database:", error);
   }
-};
-
-authToDB();
+})();
