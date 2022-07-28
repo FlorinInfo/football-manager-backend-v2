@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Team } = require("../db/sequelize");
+const { User, Team, Tournament } = require("../db/sequelize");
 const {getUsers} = require('../controllers/UserController');
 
 router.get("/", async (req, res) => {
@@ -9,15 +9,28 @@ router.get("/", async (req, res) => {
         });
 
        const user = await User.create({
-           username:"xxeee",
+           username:"llll",
            email:"isf@mail.com",
            password:"123456",
        });
-        await team.addUser(user, {through: 'Team_Players'});
+       await team.addUser(user, {through: 'Team_Players'});
+
+       const tournament = await Tournament.create({
+           numberOfPlayers:3,
+           price:10,
+           description:"100",
+
+       })
+        tournament.setUser(user);
+        tournament.addUser(user);
         const users = await User.findAll();
+        // await tournament.setUser(users[0]);
+
+
         res.status(200).send(users);
     } catch (err) {
         res.status(400).send(err);
+        console.log(err)
     }
 });
 
