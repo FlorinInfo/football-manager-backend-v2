@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e96791c-5f5a-45a3-b4b0-6e534166aaab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dtos/UserDto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/TokenModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/MailService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/TokenService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/UserService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/ApiError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/middlewares/ErrorMiddleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/sequelize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/sequelize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/UserModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/UserModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/TokenService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/TokenService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UserService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +64,7 @@
       <workItem from="1659643824577" duration="2774000" />
       <workItem from="1659646726896" duration="612000" />
       <workItem from="1659681981717" duration="168000" />
-      <workItem from="1659785951430" duration="7679000" />
+      <workItem from="1659785951430" duration="15196000" />
     </task>
     <servers />
   </component>

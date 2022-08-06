@@ -3,12 +3,17 @@ const sequelize = require("./src/db/sequelize").sequelize;
 const cookieParser = require("cookie-parser");
 const user_router = require("./src/routes/user");
 const bodyParser = require('body-parser')
+const cors = require('cors')
+const ErrorMiddleware = require("./src/middlewares/ErrorMiddleware");
 
 const app = express();
 const port = 3000;
+app.use(cors())
+app.use(cookieParser());
 app.use(bodyParser.json());
 
 app.use("/users", user_router);
+app.use(ErrorMiddleware);
 
 (async () => {
   try {

@@ -2,13 +2,12 @@ const { User } = require("../db/sequelize");
 const bcrypt = require("bcrypt");
 const {sendRegistrationEmail} = require("./MailService");
 const UserDto = require("../dtos/UserDto");
-const {generateTokens,saveToken} = require("./TokenService");
-
+const {generateTokens,saveToken, removeToken} = require("./TokenService");
+const ApiError = require("../exceptions/ApiError");
 
 const Registration = async (username, email, password) => {
-    try {
         const userInstance = await User.findOne({where: {email}});
-        if(userInstance) throw new Error(`User with ${email} is already registered.`);
+        if(userInstance) throw ApiError.BadRequest(`User with ${email} is already registered.`);
         const cryptedPassword = await bcrypt.hash(password,3);
         const user =  await User.create({
             username,
@@ -18,19 +17,36 @@ const Registration = async (username, email, password) => {
         await sendRegistrationEmail(email);
         const userDto = new UserDto(user); //id, email, username
         const tokens = await generateTokens({...userDto});
-        console.log(tokens);
         await saveToken(userDto.id, tokens.refreshToken);
 
         return {
             ...tokens,
             user:userDto
         }
-    }
-    catch (err) {
-        throw new Error(err);
+}
+
+const Login = async(email, password) => {
+    const userInstance = await User.findOne({where: {email}});
+    if(!userInstance) throw ApiError.BadRequest("User with this email is not registered");
+    const validatePassword = await bcrypt.compare(password, userInstance.password);
+    if(!validatePassword) throw ApiError.BadRequest("Provided password is invalid");
+    const userDto = new UserDto(userInstance); //id, email, username
+    const tokens = await generateTokens({...userDto});
+    await saveToken(userDto.id, tokens.refreshToken);
+
+    return {
+        ...tokens,
+        user:userDto
     }
 }
 
+const Logout = async(refreshToken)=> {
+    const token = await removeToken(refreshToken);
+    return token;
+}
+
 module.exports = {
-    Registration
+    Registration,
+    Login,
+    Logout,
 }

@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const {Token} = require('../db/sequelize');
+
 const generateTokens = async(payload) =>{
     const accessToken =await jwt.sign(payload, process.env.JWT_ACCESS_SECRET, {expiresIn: '30m'});
     const refreshToken =await jwt.sign(payload, process.env.JWT_REFRESH_SECRET, {expiresIn: '30d'});
@@ -14,10 +15,15 @@ const saveToken = async(userId, refreshToken) =>{
     else {
         await Token.create({userId, refreshToken});
     }
+}
 
+const removeToken = async(refreshToken) =>{
+    const tokenData = await Token.destroy({where:{refreshToken}});
+    return tokenData;
 }
 
 module.exports = {
     generateTokens,
     saveToken,
+    removeToken
 }

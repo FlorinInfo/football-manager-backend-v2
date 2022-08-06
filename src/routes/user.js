@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Team, Tournament } = require("../db/sequelize");
-const {GetUsers, UserRegistration} = require('../controllers/UserController');
+const {GetUsers, UserRegistration,UserLogin,UserLogout} = require('../controllers/UserController');
+const {body} = require("express-validator");
 
 router.get("/xxx", async (req, res) => {
     try {
@@ -36,7 +37,15 @@ router.get("/xxx", async (req, res) => {
 
 
 router.get('/',GetUsers);
-router.post('/registration', UserRegistration);
+router.post(
+    '/registration',
+    body("email").isEmail(),
+    body("password").isLength({min:3}),
+    body("username").isLength({min:3}),
+    UserRegistration
+);
+router.post('/login',UserLogin);
+router.post('/logout',UserLogout);
 
 
 
