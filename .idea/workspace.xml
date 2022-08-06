@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1e96791c-5f5a-45a3-b4b0-6e534166aaab" name="Changes" comment="" />
+    <list default="true" id="1e96791c-5f5a-45a3-b4b0-6e534166aaab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/dtos/UserDto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/TokenModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/MailService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/TokenService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/UserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/sequelize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/sequelize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/UserModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/UserModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,13 +34,19 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenDatabaseViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/florin/Desktop/Developer/football-manager/football-manager-backend-v2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/bucataruflorin/Desktop/developer/football-manager-backend-v2&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -44,11 +64,26 @@
       <workItem from="1658771605845" duration="4735000" />
       <workItem from="1658949820424" duration="7190000" />
       <workItem from="1659041270749" duration="1613000" />
+      <workItem from="1659643824577" duration="2774000" />
+      <workItem from="1659646726896" duration="612000" />
+      <workItem from="1659681981717" duration="168000" />
+      <workItem from="1659785951430" duration="7679000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -3,6 +3,7 @@ const UserModel = require("../models/UserModel");
 const TeamModel = require("../models/TeamModel");
 const LocationModel = require("../models/LocationModel");
 const TournamentModel = require("../models/TournamentModel");
+const TokenModel = require("../models/TokenModel");
 require('dotenv').config();
 
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
@@ -14,6 +15,7 @@ const Team = TeamModel(sequelize);
 const User = UserModel(sequelize);
 const Location = LocationModel(sequelize);
 const Tournament = TournamentModel(sequelize);
+const Token = TokenModel(sequelize);
 
 //A tournament can be created only by one user, but a user can create multiple tournaments
 User.hasMany(Tournament,{foreignKey: "created_by", sourceKey: "id",});
@@ -27,6 +29,9 @@ Tournament.belongsToMany(User,{through: 'Tournament_Players'});
 User.belongsToMany(Team,{through: 'Team_Players'});
 Team.belongsToMany(User,{through: 'Team_Players'});
 
+//Every token belongs to a user
+User.hasOne(Token);
+Token.belongsTo(User);
 
 sequelize.sync().then(console.log("DB is synced"));
 
@@ -35,5 +40,6 @@ module.exports = {
     User,
     Team,
     Tournament,
-    Location
+    Location,
+    Token
 }

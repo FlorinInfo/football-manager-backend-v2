@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { User, Team, Tournament } = require("../db/sequelize");
-const {getUsers} = require('../controllers/UserController');
+const {GetUsers, UserRegistration} = require('../controllers/UserController');
 
-router.get("/", async (req, res) => {
+router.get("/xxx", async (req, res) => {
     try {
        const team = await Team.create({
             name:"xxxx",
@@ -33,5 +33,11 @@ router.get("/", async (req, res) => {
         console.log(err)
     }
 });
+
+
+router.get('/',GetUsers);
+router.post('/registration', UserRegistration);
+
+
 
 module.exports = router;
