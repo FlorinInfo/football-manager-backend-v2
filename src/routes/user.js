@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { User, Team, Tournament } = require("../db/sequelize");
-const {GetUsers, UserRegistration,UserLogin,UserLogout} = require('../controllers/UserController');
+const {GetUsers, UserRegistration,UserLogin,UserLogout, UserTokenRefresh} = require('../controllers/UserController');
 const {body} = require("express-validator");
+const AuthMiddleware = require('../middlewares/AuthMiddleware');
 
 router.get("/xxx", async (req, res) => {
     try {
@@ -36,7 +37,7 @@ router.get("/xxx", async (req, res) => {
 });
 
 
-router.get('/',GetUsers);
+router.get('/', AuthMiddleware, GetUsers);
 router.post(
     '/registration',
     body("email").isEmail(),
@@ -46,6 +47,7 @@ router.post(
 );
 router.post('/login',UserLogin);
 router.post('/logout',UserLogout);
+router.get('/refresh',UserTokenRefresh);
 
 
 

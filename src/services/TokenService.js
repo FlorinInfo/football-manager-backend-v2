@@ -22,8 +22,37 @@ const removeToken = async(refreshToken) =>{
     return tokenData;
 }
 
+const validateAccessToken = async(accessToken) =>{
+    try {
+        const userData = jwt.verify(accessToken, process.env.JWT_ACCESS_SECRET);
+        return userData;
+    }
+    catch (error) {
+        return null;
+    }
+}
+
+const validateRefreshToken = async(refreshToken) =>{
+    try {
+        const userData = jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET);
+        return userData;
+    }
+    catch (error) {
+        return null;
+    }
+}
+
+const findToken = async(token) => {
+    const tokenData = await Token.findOne({where: {refreshToken: token}});
+    return tokenData;
+}
+
+
 module.exports = {
     generateTokens,
     saveToken,
-    removeToken
+    removeToken,
+    validateRefreshToken,
+    validateAccessToken,
+    findToken
 }

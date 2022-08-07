@@ -2,7 +2,7 @@ const { User } = require("../db/sequelize");
 const bcrypt = require("bcrypt");
 const {sendRegistrationEmail} = require("./MailService");
 const UserDto = require("../dtos/UserDto");
-const {generateTokens,saveToken, removeToken} = require("./TokenService");
+const {generateTokens,saveToken, removeToken, validateRefreshToken, findToken} = require("./TokenService");
 const ApiError = require("../exceptions/ApiError");
 
 const Registration = async (username, email, password) => {
@@ -45,8 +45,34 @@ const Logout = async(refreshToken)=> {
     return token;
 }
 
+const Refresh = async(refreshToken)=> {
+    if(!refreshToken) {
+        throw ApiError.UnauthorizedError();
+    }
+    const userData = await validateRefreshToken(refreshToken);
+    const tokenFromDb = await findToken(refreshToken);
+    if(!userData || !tokenFromDb) {
+        throw ApiError.UnauthorizedError();
+    }
+    const user = await User.findByPk(userData.id);
+    const userDto = new UserDto(user); //id, email, username
+    const tokens = await generateTokens({...userDto});
+    await saveToken(userDto.id, tokens.refreshToken);
+    return {
+        ...tokens,
+        user:userDto
+    }
+}
+
+const Users = async ()=> {
+        const users = await User.findAll();
+        return users;
+}
+
 module.exports = {
     Registration,
     Login,
     Logout,
+    Refresh,
+    Users
 }

@@ -45,19 +45,23 @@ const UserLogout = async(req, res, next) => {
 
 const UserTokenRefresh = async(req, res, next) => {
     try {
-
+        const {refreshToken} = req.cookies;
+        const userData = await UserService.Refresh(refreshToken);
+        res.cookie("refreshToken",userData.refreshToken, {maxAge: 30*24*60*1000, httpOnly: true});//30 days
+        res.send(userData);
     }
     catch (err) {
-
+        next(err);
     }
 }
 
 const GetUsers = async(req, res, next) => {
     try {
-        res.send({x:1})
+        const users = await UserService.Users();
+        res.send(users);
     }
     catch (err) {
-
+        next(err);
     }
 }
 
