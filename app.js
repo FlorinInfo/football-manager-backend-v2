@@ -7,13 +7,14 @@ const cors = require('cors')
 const ErrorMiddleware = require("./src/middlewares/ErrorMiddleware");
 
 const app = express();
-const port = 3000;
-app.use(cors())
+const port = 3001;
+app.use(cors({credentials: true, origin: 'http://localhost:8080'}));
 app.use(cookieParser());
 app.use(bodyParser.json());
 
 app.use("/users", user_router);
 app.use(ErrorMiddleware);
+
 
 (async () => {
   try {
