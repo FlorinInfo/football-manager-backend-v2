@@ -26,10 +26,11 @@ const Registration = async (username, email, password) => {
 }
 
 const Login = async(email, password) => {
+    if(!email) throw ApiError.BadRequest("EmailError",["Please provide a valid email address"]);
     const userInstance = await User.findOne({where: {email}});
-    if(!userInstance) throw ApiError.BadRequest("User with this email is not registered");
+    if(!userInstance) throw ApiError.BadRequest("EmailError",["User with this email is not registered"]);
     const validatePassword = await bcrypt.compare(password, userInstance.password);
-    if(!validatePassword) throw ApiError.BadRequest("Provided password is invalid");
+    if(!validatePassword) throw ApiError.BadRequest("PasswordError",["Provided password is invalid"]);
     const userDto = new UserDto(userInstance); //id, email, username
     const tokens = await generateTokens({...userDto});
     await saveToken(userDto.id, tokens.refreshToken);
