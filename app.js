@@ -8,7 +8,7 @@ const ErrorMiddleware = require("./src/middlewares/ErrorMiddleware");
 
 const app = express();
 const port = 3001;
-app.use(cors({credentials: true, origin: 'http://localhost:8080'})); 
+app.use(cors({credentials: true, origin: 'http://localhost:8080'}));
 app.use(cookieParser());
 app.use(bodyParser.json());
 

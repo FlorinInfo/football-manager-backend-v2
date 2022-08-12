@@ -7,7 +7,7 @@ const ApiError = require("../exceptions/ApiError");
 
 const Registration = async (username, email, password) => {
         const userInstance = await User.findOne({where: {email}});
-        if(userInstance) throw ApiError.BadRequest(`User with ${email} is already registered.`);
+        if(userInstance) throw ApiError.BadRequest(`EmailError`,[`User with ${email} is already registered`]);
         const cryptedPassword = await bcrypt.hash(password,3);
         const user =  await User.create({
             username,
