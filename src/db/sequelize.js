@@ -25,6 +25,10 @@ Tournament.belongsTo(User, {foreignKey: 'created_by', targetKey: 'id'});
 User.belongsToMany(Tournament,{through: 'Tournament_Players'});
 Tournament.belongsToMany(User,{through: 'Tournament_Players'});
 
+//Every tournament has his own location
+Location.hasMany(Tournament,{foreignKey: 'Location'});
+Tournament.belongsTo(Location, {foreignKey: 'Location', targetKey: 'id'});
+
 //A team has many players(users) and a user can play in different teams
 User.belongsToMany(Team,{through: 'Team_Players'});
 Team.belongsToMany(User,{through: 'Team_Players'});
