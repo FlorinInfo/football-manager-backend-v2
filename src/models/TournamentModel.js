@@ -5,7 +5,13 @@ module.exports = (sequelize) => {
         numberOfPlayers:DataTypes.INTEGER,
         price:DataTypes.INTEGER,
         description:DataTypes.STRING,
-        // startTime:DataTypes.TIME,
-        // endTime:DataTypes.TIME,
+        startTime: {
+            type:DataTypes.INTEGER,
+            defaultValue: 1660479982
+        },
+        endTime: {
+            type:DataTypes.INTEGER,
+            defaultValue: 1660479982
+        }
     });
 };

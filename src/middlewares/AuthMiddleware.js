@@ -11,7 +11,7 @@ module.exports = async(req, res, next) => {
         const userData = await validateAccessToken(accessToken);
         console.log(userData);
         if(!userData) return next(ApiError.UnauthorizedError());
-        // req.user = userData;
+        req.body.userId = userData.id;
         next();
     }
     catch (err) {

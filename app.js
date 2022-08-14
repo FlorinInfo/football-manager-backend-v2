@@ -3,6 +3,7 @@ const sequelize = require("./src/db/sequelize").sequelize;
 const cookieParser = require("cookie-parser");
 const user_router = require("./src/routes/user");
 const location_router = require("./src/routes/location");
+const tournament_router = require("./src/routes/tournament");
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const ErrorMiddleware = require("./src/middlewares/ErrorMiddleware");
@@ -12,9 +13,11 @@ const port = 3001;
 app.use(cors({credentials: true, origin: 'http://localhost:8080'}));
 app.use(cookieParser());
 app.use(bodyParser.json());
+app.use('/uploads', express.static('uploads'));
 
 app.use("/users", user_router);
-app.use("/location", location_router);
+app.use("/locations", location_router);
+app.use("/tournaments", tournament_router);
 app.use(ErrorMiddleware);
 
 

@@ -1,14 +1,15 @@
 const {Location} = require('../db/sequelize');
 const ApiError = require("../exceptions/ApiError");
 
-const addLocation = async (locationName)=> {
-        if(!locationName || locationName.length <3 ) throw  ApiError.BadRequest('LocationErr',[`Invalid location provided`]);
+const addLocation = async (locationName, locationPath)=> {
+        if(!locationName || locationName.length <3 || !locationPath) throw  ApiError.BadRequest('LocationErr',[`Invalid location provided`]);
         const locationInstance = await Location.findOne({where: {name: locationName}});
         if(locationInstance) {
             throw  ApiError.BadRequest('LocationErr',[`Location ${locationName} already exists`]);
         }
         const location = await Location.create({
             name: locationName,
+            image:locationPath,
             rating: 0
         })
         return location;

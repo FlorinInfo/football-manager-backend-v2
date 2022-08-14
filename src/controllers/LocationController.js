@@ -4,7 +4,7 @@ const {addLocation, deleteLocation,updateLocation, getLocations} = require("../s
 const AddLocation = async(req, res, next) => {
     try {
         const {name} = req.body;
-        const location = await addLocation(name);
+        const location = await addLocation(name, req.file.path);
         if (!location) throw ApiError.BadRequest("LocationErr", ["Invalid location provided"]);
         return res.status(200).json(location);
     }

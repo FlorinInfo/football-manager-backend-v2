@@ -23,19 +23,18 @@ const removeToken = async(refreshToken) =>{
     return tokenData;
 }
 
-const validateAccessToken = async(accessToken) =>{
+const validateAccessToken = (accessToken) =>{
     try {
         console.log(process.env.JWT_ACCESS_SECRET);
-        const userData = await jwt.verify(accessToken, process.env.JWT_ACCESS_SECRET);
+        const userData =  jwt.verify(accessToken, process.env.JWT_ACCESS_SECRET);
         return userData;
     }
     catch (error) {
-        console.log("hehehe", error);
         return null;
     }
 }
 
-const validateRefreshToken = async(refreshToken) =>{
+const validateRefreshToken = (refreshToken) =>{
     try {
         const userData = jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET);
         return userData;
@@ -48,6 +47,10 @@ const validateRefreshToken = async(refreshToken) =>{
 const findToken = async(token) => {
     const tokenData = await Token.findOne({where: {refreshToken: token}});
     return tokenData;
+}
+
+const getTokenBearer = async(authorization) => {
+
 }
 
 
