@@ -1,14 +1,15 @@
-const {Tournament} = require("../db/sequelize");
+const {Tournament, Location} = require("../db/sequelize");
 const  ApiError = require( "../exceptions/ApiError");
 const {isNumeric} = require("validator");
 
 const getTournaments = async(id)=> {
     if(!id) {
-        const tournaments = await Tournament.findAll();
+        const tournaments = await Tournament.findAll({ include: [ { model: Location, as: 'location' } ] });
         return tournaments;
     }
     else {
-        const tournament = await Tournament.findOne({where:{id}});
+        const tournament = await Tournament.findOne({where:{id}, include: [ { model: Location, as: 'location' }]});
+        console.log(tournament)
         if(!tournament) throw ApiError.BadRequest("TournamentError",["Invalid tournament id"]);
         return tournament;
     }
@@ -28,7 +29,7 @@ const addTournament = async (userId, name, price,  numberOfPlayers, description,
         price,
         numberOfPlayers,
         description,
-        Location:location
+        locationId:location
     })
     return tournament;
 }

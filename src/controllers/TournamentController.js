@@ -4,7 +4,7 @@ const {validateAccessToken} = require('../services/TokenService');
 
 const GetTournaments = async(req, res, next) => {
     try {
-        const id = req.params.id;
+        const id = req.query.id;
         if(!id) {
             const tournaments = await getTournaments();
            return res.status(200).json(tournaments);

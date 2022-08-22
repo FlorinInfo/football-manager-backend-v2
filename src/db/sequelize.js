@@ -18,20 +18,71 @@ const Tournament = TournamentModel(sequelize);
 const Token = TokenModel(sequelize);
 
 //A tournament can be created only by one user, but a user can create multiple tournaments
-User.hasMany(Tournament,{foreignKey: "created_by", sourceKey: "id",});
-Tournament.belongsTo(User, {foreignKey: 'created_by', targetKey: 'id'});
+User.hasMany(Tournament,{foreignKey: "created_by"});
+Tournament.belongsTo(User, {foreignKey: 'created_by'});
 
 //A tournament has many players(users) and a user can play in different tournaments
-User.belongsToMany(Tournament,{through: 'Tournament_Players'});
-Tournament.belongsToMany(User,{through: 'Tournament_Players'});
+//A team has many players(users) and a user can play in different teams
+//A tournament has many teams and a team  can play in different tournaments
+const UserTournamentTeam = sequelize.define('UserTournamentTeam', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false
+    }
+});
+
+Team.belongsToMany(Tournament, { through: UserTournamentTeam });
+Tournament.belongsToMany(Team, { through: UserTournamentTeam });
+User.belongsToMany(Tournament, { through: UserTournamentTeam });
+Tournament.belongsToMany(User, { through: UserTournamentTeam });
+User.belongsToMany(Team, { through: UserTournamentTeam });
+Team.belongsToMany(User, { through: UserTournamentTeam });
+
+UserTournamentTeam.belongsTo(User);
+UserTournamentTeam.belongsTo(Tournament);
+UserTournamentTeam.belongsTo(Team);
+Tournament.hasMany(UserTournamentTeam);
+Team.hasMany(UserTournamentTeam);
+User.hasMany(UserTournamentTeam);
+
+// const UserTournamentTeam = sequelize.define('UserTournamentTeam', {
+//     id: {
+//         type: DataTypes.INTEGER,
+//         primaryKey: true,
+//         autoIncrement: true,
+//         allowNull: false
+//     }
+// });
+//
+// User.belongsToMany(TournamentTeam, { through: UserTournamentTeam });
+// TournamentTeam.belongsToMany(User, { through: UserTournamentTeam });
+// UserTournamentTeam.belongsTo(User);
+// UserTournamentTeam.belongsTo(TournamentTeam);
+// User.hasMany(UserTournamentTeam);
+// TournamentTeam.hasMany(UserTournamentTeam);
+
+
+// User.belongsToMany(GameTeam, { through: PlayerGameTeam });
+// GameTeam.belongsToMany(Player, { through: PlayerGameTeam });
+// PlayerGameTeam.belongsTo(Player);
+// PlayerGameTeam.belongsTo(GameTeam);
+// Player.hasMany(PlayerGameTeam);
+// GameTeam.hasMany(PlayerGameTeam);
+// User.belongsToMany(Tournament,{through: 'Tournament_Players', as:"userId"});
+
+Tournament.belongsToMany(User,{through: 'Tournament_Players',as:"tournamentId"});
+User.belongsToMany(Team,{through: 'Tournament_Players'});
+// Team.belongsToMany(User,{through: 'Tournament_Players', as:"teamId"});
 
 //Every tournament has his own location
-Location.hasMany(Tournament,{foreignKey: 'Location'});
-Tournament.belongsTo(Location, {foreignKey: 'Location', targetKey: 'id'});
+Location.hasMany(Tournament);
+Tournament.belongsTo(Location);
 
 //A team has many players(users) and a user can play in different teams
-User.belongsToMany(Team,{through: 'Team_Players'});
-Team.belongsToMany(User,{through: 'Team_Players'});
+// User.belongsToMany(Team,{through: 'Tournament_Players'});
+
 
 //Every token belongs to a user
 User.hasOne(Token);
