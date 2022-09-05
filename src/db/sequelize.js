@@ -9,6 +9,7 @@ require('dotenv').config();
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
   host: "localhost",
   dialect: "postgres", //'mysql' | 'mariadb' | 'postgres' | 'mssql' */
+    logging: false
 });
 
 const Team = TeamModel(sequelize);
@@ -37,40 +38,9 @@ Team.belongsToMany(Tournament, { through: UserTournamentTeam });
 Tournament.belongsToMany(Team, { through: UserTournamentTeam });
 User.belongsToMany(Tournament, { through: UserTournamentTeam });
 Tournament.belongsToMany(User, { through: UserTournamentTeam });
-User.belongsToMany(Team, { through: UserTournamentTeam });
-Team.belongsToMany(User, { through: UserTournamentTeam });
+// Team.hasMany(User, { through: UserTournamentTeam });
+// User.belongsToMany(Team, { through: UserTournamentTeam });
 
-UserTournamentTeam.belongsTo(User);
-UserTournamentTeam.belongsTo(Tournament);
-UserTournamentTeam.belongsTo(Team);
-Tournament.hasMany(UserTournamentTeam);
-Team.hasMany(UserTournamentTeam);
-User.hasMany(UserTournamentTeam);
-
-// const UserTournamentTeam = sequelize.define('UserTournamentTeam', {
-//     id: {
-//         type: DataTypes.INTEGER,
-//         primaryKey: true,
-//         autoIncrement: true,
-//         allowNull: false
-//     }
-// });
-//
-// User.belongsToMany(TournamentTeam, { through: UserTournamentTeam });
-// TournamentTeam.belongsToMany(User, { through: UserTournamentTeam });
-// UserTournamentTeam.belongsTo(User);
-// UserTournamentTeam.belongsTo(TournamentTeam);
-// User.hasMany(UserTournamentTeam);
-// TournamentTeam.hasMany(UserTournamentTeam);
-
-
-// User.belongsToMany(GameTeam, { through: PlayerGameTeam });
-// GameTeam.belongsToMany(Player, { through: PlayerGameTeam });
-// PlayerGameTeam.belongsTo(Player);
-// PlayerGameTeam.belongsTo(GameTeam);
-// Player.hasMany(PlayerGameTeam);
-// GameTeam.hasMany(PlayerGameTeam);
-// User.belongsToMany(Tournament,{through: 'Tournament_Players', as:"userId"});
 
 Tournament.belongsToMany(User,{through: 'Tournament_Players',as:"tournamentId"});
 User.belongsToMany(Team,{through: 'Tournament_Players'});
@@ -79,9 +49,6 @@ User.belongsToMany(Team,{through: 'Tournament_Players'});
 //Every tournament has his own location
 Location.hasMany(Tournament);
 Tournament.belongsTo(Location);
-
-//A team has many players(users) and a user can play in different teams
-// User.belongsToMany(Team,{through: 'Tournament_Players'});
 
 
 //Every token belongs to a user
@@ -96,5 +63,6 @@ module.exports = {
     Team,
     Tournament,
     Location,
-    Token
+    Token,
+    UserTournamentTeam
 }

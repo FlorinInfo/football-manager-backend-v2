@@ -1,4 +1,4 @@
-const { User } = require("../db/sequelize");
+const { User, UserTournamentTeam} = require("../db/sequelize");
 const bcrypt = require("bcrypt");
 const {sendRegistrationEmail} = require("./MailService");
 const UserDto = require("../dtos/UserDto");
@@ -70,10 +70,22 @@ const Users = async ()=> {
         return users;
 }
 
+const RegisterToTournament = async (userId, tournamentId)=> {
+    if(!tournamentId) throw ApiError.BadRequest("TournamentError",["Invalid tournament id"]);
+    if(!userId) throw ApiError.BadRequest("UserError",["Invalid user id"]);
+    const errors = [];
+    const UserTournamentInstance = await UserTournamentTeam.findOne({where: {userId, tournamentId}});
+    if(UserTournamentInstance) errors.push("alreadyRegistered");
+    if(errors.length) throw ApiError.BadRequest("RegisterToTournamentError", errors);
+    const registerInstance = await UserTournamentTeam.create({userId, tournamentId});
+    return registerInstance;
+}
+
 module.exports = {
     Registration,
     Login,
     Logout,
     Refresh,
-    Users
+    Users,
+    RegisterToTournament
 }

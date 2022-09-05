@@ -1,6 +1,7 @@
 const UserService = require('../services/UserService');
 const {validationResult} = require("express-validator");
 const ApiError = require("../exceptions/ApiError");
+const {UserTournamentTeam} = require("../db/sequelize");
 
 const UserRegistration = async(req, res, next) => {
     try {
@@ -65,6 +66,18 @@ const GetUsers = async(req, res, next) => {
     }
 }
 
+const UserRegisterToTournament = async(req, res, next) => {
+    try {
+        console.log(req.body);
+        const {userId, tournamentId} = req.body;
+        const UserTournament = await UserService.RegisterToTournament(userId, tournamentId);
+        res.status(200).json(UserTournament);
+    }
+    catch (err) {
+        next(err);
+    }
+}
+
 
 
 module.exports = {
@@ -72,5 +85,6 @@ module.exports = {
     UserLogin,
     UserTokenRefresh,
     GetUsers,
-    UserLogout
+    UserLogout,
+    UserRegisterToTournament
 }
