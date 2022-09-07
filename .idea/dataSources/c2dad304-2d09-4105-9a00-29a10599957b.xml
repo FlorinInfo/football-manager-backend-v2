@@ -3,9 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.41">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>1200</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1237</IntrospectionStateNumber>
       <ServerVersion>14.4</ServerVersion>
-      <StartupTime>1662401233</StartupTime>
+      <StartupTime>1662574859</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -799,15 +799,14 @@ false Zulu
 13654||10|C|G
 13654||-9223372036854775808|U|G
 13654||10|U|G</Grants>
-      <IntrospectionStateNumber>1200</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1237</IntrospectionStateNumber>
       <ObjectId>16394</ObjectId>
       <Relations>sequence|table|16396|16397|1
-sequence|table|16405|16406|1
 sequence|table|16466|16467|1
 sequence|table|16494|16495|1
 sequence|table|16911|16912|1
-sequence|table|17016|17017|1
-sequence|table|17274|17275|1
+sequence|table|17300|17301|1
+sequence|table|17312|17313|1
 </Relations>
       <OwnerName>admin</OwnerName>
     </database>
@@ -4242,465 +4241,285 @@ sequence|table|17274|17275|1
     <schema id="263" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1200</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1237</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>527</StateNumber>
       <OwnerName>postgres</OwnerName>
     </schema>
-    <sequence id="264" parent="263" name="TournamentTeams_id_seq">
+    <sequence id="264" parent="263" name="UserTournamentTeams_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>17016</ObjectId>
-      <StateNumber>1076</StateNumber>
+      <ObjectId>17312</ObjectId>
+      <StateNumber>1235</StateNumber>
       <OwnerName>admin</OwnerName>
     </sequence>
-    <sequence id="265" parent="263" name="UserTournamentTeams_id_seq">
-      <DataType>integer|0s</DataType>
-      <ObjectId>17274</ObjectId>
-      <StateNumber>1195</StateNumber>
-      <OwnerName>admin</OwnerName>
-    </sequence>
-    <sequence id="266" parent="263" name="locations_id_seq">
+    <sequence id="265" parent="263" name="locations_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>16494</ObjectId>
       <StateNumber>867</StateNumber>
       <OwnerName>admin</OwnerName>
     </sequence>
-    <sequence id="267" parent="263" name="teams_id_seq">
+    <sequence id="266" parent="263" name="teams_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>16405</ObjectId>
-      <StateNumber>740</StateNumber>
+      <ObjectId>17300</ObjectId>
+      <StateNumber>1234</StateNumber>
       <OwnerName>admin</OwnerName>
     </sequence>
-    <sequence id="268" parent="263" name="tokens_id_seq">
+    <sequence id="267" parent="263" name="tokens_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>16466</ObjectId>
       <StateNumber>770</StateNumber>
       <OwnerName>admin</OwnerName>
     </sequence>
-    <sequence id="269" parent="263" name="tournaments_id_seq">
+    <sequence id="268" parent="263" name="tournaments_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>16911</ObjectId>
       <StateNumber>1044</StateNumber>
       <OwnerName>admin</OwnerName>
     </sequence>
-    <sequence id="270" parent="263" name="users_id_seq">
+    <sequence id="269" parent="263" name="users_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>16396</ObjectId>
       <StateNumber>739</StateNumber>
       <OwnerName>admin</OwnerName>
     </sequence>
-    <table id="271" parent="263" name="Team_Players">
-      <ObjectId>16439</ObjectId>
-      <StateNumber>743</StateNumber>
+    <table id="270" parent="263" name="Tournament_Players">
+      <ObjectId>17338</ObjectId>
+      <StateNumber>1236</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="272" parent="263" name="TournamentTeams">
-      <ObjectId>17017</ObjectId>
-      <StateNumber>1076</StateNumber>
+    <table id="271" parent="263" name="UserTournamentTeams">
+      <ObjectId>17313</ObjectId>
+      <StateNumber>1235</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="273" parent="263" name="Tournament_Players">
-      <ObjectId>16975</ObjectId>
-      <StateNumber>1063</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>admin</OwnerName>
-    </table>
-    <table id="274" parent="263" name="UserTournamentTeams">
-      <ObjectId>17275</ObjectId>
-      <StateNumber>1195</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>admin</OwnerName>
-    </table>
-    <table id="275" parent="263" name="locations">
+    <table id="272" parent="263" name="locations">
       <ObjectId>16495</ObjectId>
       <StateNumber>884</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="276" parent="263" name="teams">
-      <ObjectId>16406</ObjectId>
-      <StateNumber>743</StateNumber>
+    <table id="273" parent="263" name="teams">
+      <ObjectId>17301</ObjectId>
+      <StateNumber>1235</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="277" parent="263" name="tokens">
+    <table id="274" parent="263" name="tokens">
       <ObjectId>16467</ObjectId>
       <StateNumber>770</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="278" parent="263" name="tournaments">
+    <table id="275" parent="263" name="tournaments">
       <ObjectId>16912</ObjectId>
       <StateNumber>1044</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="279" parent="263" name="users">
+    <table id="276" parent="263" name="users">
       <ObjectId>16397</ObjectId>
       <StateNumber>1119</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <column id="280" parent="271" name="createdAt">
+    <column id="277" parent="270" name="createdAt">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>743</StateNumber>
+      <StateNumber>1236</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="281" parent="271" name="updatedAt">
+    <column id="278" parent="270" name="updatedAt">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>743</StateNumber>
+      <StateNumber>1236</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="282" parent="271" name="userId">
+    <column id="279" parent="270" name="userId">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>743</StateNumber>
+      <StateNumber>1236</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="283" parent="271" name="teamId">
+    <column id="280" parent="270" name="teamId">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>743</StateNumber>
+      <StateNumber>1236</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="284" parent="271" name="Team_Players_userId_fkey">
+    <foreign-key id="281" parent="270" name="Tournament_Players_userId_fkey">
       <ColNames>userId</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16444</ObjectId>
+      <ObjectId>17343</ObjectId>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>743</StateNumber>
+      <StateNumber>1236</StateNumber>
       <RefTableId>16397</RefTableId>
       <RefTableName>users</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="285" parent="271" name="Team_Players_teamId_fkey">
+    <foreign-key id="282" parent="270" name="Tournament_Players_teamId_fkey">
       <ColNames>teamId</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16449</ObjectId>
+      <ObjectId>17348</ObjectId>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>743</StateNumber>
-      <RefTableId>16406</RefTableId>
+      <StateNumber>1236</StateNumber>
+      <RefTableId>17301</RefTableId>
       <RefTableName>teams</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="286" parent="271" name="Team_Players_pkey">
+    <index id="283" parent="270" name="Tournament_Players_pkey">
       <ColNames>userId
 teamId</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16442</ObjectId>
+      <ObjectId>17341</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>743</StateNumber>
+      <StateNumber>1236</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="287" parent="271" name="Team_Players_pkey">
+    <key id="284" parent="270" name="Tournament_Players_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16443</ObjectId>
+      <ObjectId>17342</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>743</StateNumber>
-      <UnderlyingIndexId>16442</UnderlyingIndexId>
+      <StateNumber>1236</StateNumber>
+      <UnderlyingIndexId>17341</UnderlyingIndexId>
     </key>
-    <column id="288" parent="272" name="id">
-      <DataType>integer|0s</DataType>
-      <DefaultExpression>nextval(&apos;&quot;TournamentTeams_id_seq&quot;&apos;::regclass)</DefaultExpression>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>1076</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="289" parent="272" name="createdAt">
-      <DataType>timestamp with time zone|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>1076</StateNumber>
-      <TypeId>1184</TypeId>
-    </column>
-    <column id="290" parent="272" name="updatedAt">
-      <DataType>timestamp with time zone|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StateNumber>1076</StateNumber>
-      <TypeId>1184</TypeId>
-    </column>
-    <column id="291" parent="272" name="teamId">
-      <DataType>integer|0s</DataType>
-      <Position>4</Position>
-      <StateNumber>1076</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="292" parent="272" name="tournamentId">
-      <DataType>integer|0s</DataType>
-      <Position>5</Position>
-      <StateNumber>1076</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <foreign-key id="293" parent="272" name="TournamentTeams_teamId_fkey">
-      <ColNames>teamId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17025</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <OnUpdate>cascade</OnUpdate>
-      <RefColNames>id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>1076</StateNumber>
-      <RefTableId>16406</RefTableId>
-      <RefTableName>teams</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <foreign-key id="294" parent="272" name="TournamentTeams_tournamentId_fkey">
-      <ColNames>tournamentId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17030</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <OnUpdate>cascade</OnUpdate>
-      <RefColNames>id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>1076</StateNumber>
-      <RefTableId>16912</RefTableId>
-      <RefTableName>tournaments</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <index id="295" parent="272" name="TournamentTeams_pkey">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17021</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>1076</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <index id="296" parent="272" name="TournamentTeams_teamId_tournamentId_key">
-      <ColNames>teamId
-tournamentId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17023</ObjectId>
-      <StateNumber>1076</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="297" parent="272" name="TournamentTeams_pkey">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17022</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>1076</StateNumber>
-      <UnderlyingIndexId>17021</UnderlyingIndexId>
-    </key>
-    <key id="298" parent="272" name="TournamentTeams_teamId_tournamentId_key">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17024</ObjectId>
-      <StateNumber>1076</StateNumber>
-      <UnderlyingIndexId>17023</UnderlyingIndexId>
-    </key>
-    <column id="299" parent="273" name="createdAt">
-      <DataType>timestamp with time zone|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>1063</StateNumber>
-      <TypeId>1184</TypeId>
-    </column>
-    <column id="300" parent="273" name="updatedAt">
-      <DataType>timestamp with time zone|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>1063</StateNumber>
-      <TypeId>1184</TypeId>
-    </column>
-    <column id="301" parent="273" name="userId">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StateNumber>1063</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="302" parent="273" name="teamId">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StateNumber>1063</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <foreign-key id="303" parent="273" name="Tournament_Players_userId_fkey">
-      <ColNames>userId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16980</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <OnUpdate>cascade</OnUpdate>
-      <RefColNames>id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>1063</StateNumber>
-      <RefTableId>16397</RefTableId>
-      <RefTableName>users</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <foreign-key id="304" parent="273" name="Tournament_Players_teamId_fkey">
-      <ColNames>teamId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16985</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <OnUpdate>cascade</OnUpdate>
-      <RefColNames>id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>1063</StateNumber>
-      <RefTableId>16406</RefTableId>
-      <RefTableName>teams</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <index id="305" parent="273" name="Tournament_Players_pkey">
-      <ColNames>userId
-teamId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16978</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>1063</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="306" parent="273" name="Tournament_Players_pkey">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16979</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>1063</StateNumber>
-      <UnderlyingIndexId>16978</UnderlyingIndexId>
-    </key>
-    <column id="307" parent="274" name="id">
+    <column id="285" parent="271" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;&quot;UserTournamentTeams_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>1195</StateNumber>
+      <StateNumber>1235</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="308" parent="274" name="createdAt">
+    <column id="286" parent="271" name="createdAt">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>1195</StateNumber>
+      <StateNumber>1235</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="309" parent="274" name="updatedAt">
+    <column id="287" parent="271" name="updatedAt">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>1195</StateNumber>
+      <StateNumber>1235</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="310" parent="274" name="teamId">
+    <column id="288" parent="271" name="teamId">
       <DataType>integer|0s</DataType>
       <Position>4</Position>
-      <StateNumber>1195</StateNumber>
+      <StateNumber>1235</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="311" parent="274" name="tournamentId">
+    <column id="289" parent="271" name="tournamentId">
       <DataType>integer|0s</DataType>
       <Position>5</Position>
-      <StateNumber>1195</StateNumber>
+      <StateNumber>1235</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="312" parent="274" name="userId">
+    <column id="290" parent="271" name="userId">
       <DataType>integer|0s</DataType>
       <Position>6</Position>
-      <StateNumber>1195</StateNumber>
+      <StateNumber>1235</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="313" parent="274" name="UserTournamentTeams_teamId_fkey">
+    <foreign-key id="291" parent="271" name="UserTournamentTeams_teamId_fkey">
       <ColNames>teamId</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17285</ObjectId>
+      <ObjectId>17323</ObjectId>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>1195</StateNumber>
-      <RefTableId>16406</RefTableId>
+      <StateNumber>1235</StateNumber>
+      <RefTableId>17301</RefTableId>
       <RefTableName>teams</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="314" parent="274" name="UserTournamentTeams_tournamentId_fkey">
+    <foreign-key id="292" parent="271" name="UserTournamentTeams_tournamentId_fkey">
       <ColNames>tournamentId</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17290</ObjectId>
+      <ObjectId>17328</ObjectId>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>1195</StateNumber>
+      <StateNumber>1235</StateNumber>
       <RefTableId>16912</RefTableId>
       <RefTableName>tournaments</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="315" parent="274" name="UserTournamentTeams_userId_fkey">
+    <foreign-key id="293" parent="271" name="UserTournamentTeams_userId_fkey">
       <ColNames>userId</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17295</ObjectId>
+      <ObjectId>17333</ObjectId>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>1195</StateNumber>
+      <StateNumber>1235</StateNumber>
       <RefTableId>16397</RefTableId>
       <RefTableName>users</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="316" parent="274" name="UserTournamentTeams_pkey">
+    <index id="294" parent="271" name="UserTournamentTeams_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17279</ObjectId>
+      <ObjectId>17317</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1195</StateNumber>
+      <StateNumber>1235</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="317" parent="274" name="UserTournamentTeams_teamId_userId_key">
-      <ColNames>teamId
+    <index id="295" parent="271" name="UserTournamentTeams_teamId_key">
+      <ColNames>teamId</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>17319</ObjectId>
+      <StateNumber>1235</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="296" parent="271" name="UserTournamentTeams_tournamentId_userId_key">
+      <ColNames>tournamentId
 userId</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17281</ObjectId>
-      <StateNumber>1195</StateNumber>
+      <ObjectId>17321</ObjectId>
+      <StateNumber>1235</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="318" parent="274" name="UserTournamentTeams_tournamentId_key">
-      <ColNames>tournamentId</ColNames>
+    <key id="297" parent="271" name="UserTournamentTeams_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17283</ObjectId>
-      <StateNumber>1195</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="319" parent="274" name="UserTournamentTeams_pkey">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17280</ObjectId>
+      <ObjectId>17318</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1195</StateNumber>
-      <UnderlyingIndexId>17279</UnderlyingIndexId>
+      <StateNumber>1235</StateNumber>
+      <UnderlyingIndexId>17317</UnderlyingIndexId>
     </key>
-    <key id="320" parent="274" name="UserTournamentTeams_teamId_userId_key">
+    <key id="298" parent="271" name="UserTournamentTeams_teamId_key">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17282</ObjectId>
-      <StateNumber>1195</StateNumber>
-      <UnderlyingIndexId>17281</UnderlyingIndexId>
+      <ObjectId>17320</ObjectId>
+      <StateNumber>1235</StateNumber>
+      <UnderlyingIndexId>17319</UnderlyingIndexId>
     </key>
-    <key id="321" parent="274" name="UserTournamentTeams_tournamentId_key">
+    <key id="299" parent="271" name="UserTournamentTeams_tournamentId_userId_key">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17284</ObjectId>
-      <StateNumber>1195</StateNumber>
-      <UnderlyingIndexId>17283</UnderlyingIndexId>
+      <ObjectId>17322</ObjectId>
+      <StateNumber>1235</StateNumber>
+      <UnderlyingIndexId>17321</UnderlyingIndexId>
     </key>
-    <column id="322" parent="275" name="id">
+    <column id="300" parent="272" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;locations_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4708,41 +4527,41 @@ userId</ColNames>
       <StateNumber>867</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="323" parent="275" name="name">
+    <column id="301" parent="272" name="name">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>867</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="324" parent="275" name="image">
+    <column id="302" parent="272" name="image">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>867</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="325" parent="275" name="rating">
+    <column id="303" parent="272" name="rating">
       <DataType>integer|0s</DataType>
       <Position>4</Position>
       <StateNumber>867</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="326" parent="275" name="createdAt">
+    <column id="304" parent="272" name="createdAt">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>867</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="327" parent="275" name="updatedAt">
+    <column id="305" parent="272" name="updatedAt">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>867</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="328" parent="275" name="locations_pkey">
+    <index id="306" parent="272" name="locations_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16501</ObjectId>
@@ -4751,64 +4570,90 @@ userId</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="329" parent="275" name="locations_pkey">
+    <key id="307" parent="272" name="locations_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16502</ObjectId>
       <Primary>1</Primary>
       <StateNumber>867</StateNumber>
       <UnderlyingIndexId>16501</UnderlyingIndexId>
     </key>
-    <column id="330" parent="276" name="id">
+    <column id="308" parent="273" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;teams_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>740</StateNumber>
+      <StateNumber>1234</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="331" parent="276" name="name">
+    <column id="309" parent="273" name="name">
       <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>740</StateNumber>
+      <StateNumber>1234</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="332" parent="276" name="rating">
-      <DataType>integer|0s</DataType>
+    <column id="310" parent="273" name="color">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>740</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>1234</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <column id="333" parent="276" name="createdAt">
-      <DataType>timestamp with time zone|0s</DataType>
+    <column id="311" parent="273" name="rating">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>740</StateNumber>
-      <TypeId>1184</TypeId>
+      <StateNumber>1234</StateNumber>
+      <TypeId>23</TypeId>
     </column>
-    <column id="334" parent="276" name="updatedAt">
-      <DataType>timestamp with time zone|0s</DataType>
+    <column id="312" parent="273" name="attacking">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>740</StateNumber>
+      <StateNumber>1234</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="313" parent="273" name="defense">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StateNumber>1234</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="314" parent="273" name="createdAt">
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StateNumber>1234</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="335" parent="276" name="teams_pkey">
+    <column id="315" parent="273" name="updatedAt">
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+      <StateNumber>1234</StateNumber>
+      <TypeId>1184</TypeId>
+    </column>
+    <index id="316" parent="273" name="teams_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16410</ObjectId>
+      <ObjectId>17310</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>740</StateNumber>
+      <StateNumber>1234</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="336" parent="276" name="teams_pkey">
+    <key id="317" parent="273" name="teams_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16411</ObjectId>
+      <ObjectId>17311</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>740</StateNumber>
-      <UnderlyingIndexId>16410</UnderlyingIndexId>
+      <StateNumber>1234</StateNumber>
+      <UnderlyingIndexId>17310</UnderlyingIndexId>
     </key>
-    <column id="337" parent="277" name="id">
+    <column id="318" parent="274" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;tokens_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4816,33 +4661,33 @@ userId</ColNames>
       <StateNumber>770</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="338" parent="277" name="refreshToken">
+    <column id="319" parent="274" name="refreshToken">
       <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
       <StateNumber>770</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="339" parent="277" name="createdAt">
+    <column id="320" parent="274" name="createdAt">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>770</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="340" parent="277" name="updatedAt">
+    <column id="321" parent="274" name="updatedAt">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>770</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="341" parent="277" name="userId">
+    <column id="322" parent="274" name="userId">
       <DataType>integer|0s</DataType>
       <Position>5</Position>
       <StateNumber>770</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="342" parent="277" name="tokens_userId_fkey">
+    <foreign-key id="323" parent="274" name="tokens_userId_fkey">
       <ColNames>userId</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16473</ObjectId>
@@ -4855,7 +4700,7 @@ userId</ColNames>
       <RefTableName>users</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="343" parent="277" name="tokens_pkey">
+    <index id="324" parent="274" name="tokens_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16471</ObjectId>
@@ -4864,14 +4709,14 @@ userId</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="344" parent="277" name="tokens_pkey">
+    <key id="325" parent="274" name="tokens_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16472</ObjectId>
       <Primary>1</Primary>
       <StateNumber>770</StateNumber>
       <UnderlyingIndexId>16471</UnderlyingIndexId>
     </key>
-    <column id="345" parent="278" name="id">
+    <column id="326" parent="275" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;tournaments_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4879,65 +4724,65 @@ userId</ColNames>
       <StateNumber>1044</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="346" parent="278" name="numberOfPlayers">
+    <column id="327" parent="275" name="numberOfPlayers">
       <DataType>integer|0s</DataType>
       <Position>2</Position>
       <StateNumber>1044</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="347" parent="278" name="price">
+    <column id="328" parent="275" name="price">
       <DataType>integer|0s</DataType>
       <Position>3</Position>
       <StateNumber>1044</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="348" parent="278" name="description">
+    <column id="329" parent="275" name="description">
       <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
       <StateNumber>1044</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="349" parent="278" name="startTime">
+    <column id="330" parent="275" name="startTime">
       <DataType>integer|0s</DataType>
       <DefaultExpression>1660479982</DefaultExpression>
       <Position>5</Position>
       <StateNumber>1044</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="350" parent="278" name="endTime">
+    <column id="331" parent="275" name="endTime">
       <DataType>integer|0s</DataType>
       <DefaultExpression>1660479982</DefaultExpression>
       <Position>6</Position>
       <StateNumber>1044</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="351" parent="278" name="createdAt">
+    <column id="332" parent="275" name="createdAt">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StateNumber>1044</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="352" parent="278" name="updatedAt">
+    <column id="333" parent="275" name="updatedAt">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>8</Position>
       <StateNumber>1044</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="353" parent="278" name="created_by">
+    <column id="334" parent="275" name="created_by">
       <DataType>integer|0s</DataType>
       <Position>9</Position>
       <StateNumber>1044</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="354" parent="278" name="locationId">
+    <column id="335" parent="275" name="locationId">
       <DataType>integer|0s</DataType>
       <Position>10</Position>
       <StateNumber>1044</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="355" parent="278" name="tournaments_created_by_fkey">
+    <foreign-key id="336" parent="275" name="tournaments_created_by_fkey">
       <ColNames>created_by</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16920</ObjectId>
@@ -4950,7 +4795,7 @@ userId</ColNames>
       <RefTableName>users</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="356" parent="278" name="tournaments_locationId_fkey">
+    <foreign-key id="337" parent="275" name="tournaments_locationId_fkey">
       <ColNames>locationId</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16925</ObjectId>
@@ -4963,7 +4808,7 @@ userId</ColNames>
       <RefTableName>locations</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="357" parent="278" name="tournaments_pkey">
+    <index id="338" parent="275" name="tournaments_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16918</ObjectId>
@@ -4972,14 +4817,14 @@ userId</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="358" parent="278" name="tournaments_pkey">
+    <key id="339" parent="275" name="tournaments_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16919</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1044</StateNumber>
       <UnderlyingIndexId>16918</UnderlyingIndexId>
     </key>
-    <column id="359" parent="279" name="id">
+    <column id="340" parent="276" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4987,60 +4832,60 @@ userId</ColNames>
       <StateNumber>739</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="360" parent="279" name="username">
+    <column id="341" parent="276" name="username">
       <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
       <StateNumber>739</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="361" parent="279" name="email">
+    <column id="342" parent="276" name="email">
       <DataType>varchar(255)|0s</DataType>
       <Position>3</Position>
       <StateNumber>739</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="362" parent="279" name="password">
+    <column id="343" parent="276" name="password">
       <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
       <StateNumber>739</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="363" parent="279" name="createdAt">
+    <column id="344" parent="276" name="createdAt">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>739</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="364" parent="279" name="updatedAt">
+    <column id="345" parent="276" name="updatedAt">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>739</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="365" parent="279" name="rating">
+    <column id="346" parent="276" name="rating">
       <DataType>numeric|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>7</Position>
       <StateNumber>1115</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <column id="366" parent="279" name="attacking">
+    <column id="347" parent="276" name="attacking">
       <DataType>numeric|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>8</Position>
       <StateNumber>1117</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <column id="367" parent="279" name="defense">
+    <column id="348" parent="276" name="defense">
       <DataType>numeric|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>9</Position>
       <StateNumber>1119</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <index id="368" parent="279" name="users_pkey">
+    <index id="349" parent="276" name="users_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16403</ObjectId>
@@ -5049,7 +4894,7 @@ userId</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="369" parent="279" name="users_pkey">
+    <key id="350" parent="276" name="users_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16404</ObjectId>
       <Primary>1</Primary>

@@ -55,7 +55,7 @@ Tournament.belongsTo(Location);
 User.hasOne(Token);
 Token.belongsTo(User);
 
-sequelize.sync().then(console.log("DB is synced"));
+sequelize.sync().then(console.log("DB is synced")).catch(error => console.log(error));
 
 module.exports = {
     sequelize,
