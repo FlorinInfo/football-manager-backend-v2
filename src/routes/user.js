@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Team, Tournament } = require("../db/sequelize");
-const {GetUsers, UserRegistration,UserLogin,UserLogout, UserTokenRefresh, UserRegisterToTournament} = require('../controllers/UserController');
+const {GetUsers, UserRegistration,UserLogin,UserLogout, UserTokenRefresh, UserRegisterToTournament, UserUpdateAttack,UserUpdateDefense} = require('../controllers/UserController');
 const {body} = require("express-validator");
 const AuthMiddleware = require('../middlewares/AuthMiddleware');
 
@@ -15,8 +15,8 @@ router.post(
 router.post('/login',UserLogin);
 router.post('/logout',UserLogout);
 router.get('/refresh',UserTokenRefresh);
-router.post('/registerToTournament',AuthMiddleware,UserRegisterToTournament)
-
-
+router.post('/registerToTournament',AuthMiddleware,UserRegisterToTournament);
+router.patch('/attack',AuthMiddleware,UserUpdateAttack);
+router.patch('/defense',AuthMiddleware,UserUpdateDefense);
 
 module.exports = router;

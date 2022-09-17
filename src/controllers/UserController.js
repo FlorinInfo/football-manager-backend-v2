@@ -68,7 +68,6 @@ const GetUsers = async(req, res, next) => {
 
 const UserRegisterToTournament = async(req, res, next) => {
     try {
-        console.log(req.body);
         const {userId, tournamentId} = req.body;
         const UserTournament = await UserService.RegisterToTournament(userId, tournamentId);
         res.status(200).json(UserTournament);
@@ -78,6 +77,27 @@ const UserRegisterToTournament = async(req, res, next) => {
     }
 }
 
+const UserUpdateAttack = async(req, res, next) => {
+    try {
+        const {id, attacking} = req.body;
+        const User = await UserService.UpdateAttacking(id, attacking);
+        res.status(200).json(User);
+    }
+    catch (err) {
+        next(err)
+    }
+}
+
+const UserUpdateDefense = async(req, res, next) => {
+    try {
+        const {id, defense} = req.body;
+        const User = await UserService.UpdateDefense(id, defense);
+        res.status(200).json(User);
+    }
+    catch (err) {
+        next(err)
+    }
+}
 
 
 module.exports = {
@@ -86,5 +106,7 @@ module.exports = {
     UserTokenRefresh,
     GetUsers,
     UserLogout,
-    UserRegisterToTournament
+    UserRegisterToTournament,
+    UserUpdateAttack,
+    UserUpdateDefense
 }

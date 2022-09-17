@@ -81,11 +81,39 @@ const RegisterToTournament = async (userId, tournamentId)=> {
     return registerInstance;
 }
 
+const UpdateAttacking = async (id, att)=> {
+    const errors = [];
+    const userInstance = await User.findOne({where: {id}});
+    if(!userInstance) errors.push("Invalid user id");
+    console.log(typeof att)
+    if(typeof att != "number" || att < 0 || att > 10) errors.push("Invalid attacking mark");
+    if(errors.length) throw ApiError.BadRequest("UpdateAttackingErr", errors);
+    let attacking = userInstance.attacking;
+    if(attacking === 0) await userInstance.update({attacking:att});else await userInstance.update({attacking:(Number(att)+Number(attacking))/2});
+    await userInstance.update({rating:(Number(userInstance.attacking) + Number(userInstance.defense))/2});
+    return userInstance;
+}
+
+const UpdateDefense = async (id, def)=> {
+    const errors = [];
+    const userInstance = await User.findOne({where: {id}});
+    if(!userInstance) errors.push("Invalid user id");
+    console.log( def)
+    if(typeof def != "number" || def < 0 || def > 10) errors.push("Invalid defensing mark");
+    if(errors.length) throw ApiError.BadRequest("UpdateDefensingMark", errors);
+    let defense = userInstance.defense;
+    if(defense === 0) await userInstance.update({defense:def});else await userInstance.update({defense:(Number(def)+Number(defense))/2});
+    await userInstance.update({rating:(Number(userInstance.attacking) + Number(userInstance.defense))/2});
+    return userInstance;
+}
+
 module.exports = {
     Registration,
     Login,
     Logout,
     Refresh,
     Users,
-    RegisterToTournament
+    RegisterToTournament,
+    UpdateAttacking,
+    UpdateDefense
 }
