@@ -89,7 +89,7 @@ const UpdateAttacking = async (id, att)=> {
     if(typeof att != "number" || att < 0 || att > 10) errors.push("Invalid attacking mark");
     if(errors.length) throw ApiError.BadRequest("UpdateAttackingErr", errors);
     let attacking = userInstance.attacking;
-    if(attacking === 0) await userInstance.update({attacking:att});else await userInstance.update({attacking:(Number(att)+Number(attacking))/2});
+    if(attacking == 0) await userInstance.update({attacking:att});else await userInstance.update({attacking:(Number(att)+Number(attacking))/2});
     await userInstance.update({rating:(Number(userInstance.attacking) + Number(userInstance.defense))/2});
     return userInstance;
 }
