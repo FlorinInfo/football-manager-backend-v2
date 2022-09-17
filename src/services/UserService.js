@@ -98,11 +98,10 @@ const UpdateDefense = async (id, def)=> {
     const errors = [];
     const userInstance = await User.findOne({where: {id}});
     if(!userInstance) errors.push("Invalid user id");
-    console.log( def)
     if(typeof def != "number" || def < 0 || def > 10) errors.push("Invalid defensing mark");
     if(errors.length) throw ApiError.BadRequest("UpdateDefensingMark", errors);
     let defense = userInstance.defense;
-    if(defense === 0) await userInstance.update({defense:def});else await userInstance.update({defense:(Number(def)+Number(defense))/2});
+    if(defense == 0) await userInstance.update({defense:def});else await userInstance.update({defense:(Number(def)+Number(defense))/2});
     await userInstance.update({rating:(Number(userInstance.attacking) + Number(userInstance.defense))/2});
     return userInstance;
 }
